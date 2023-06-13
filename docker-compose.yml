@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+    app:
+        build: .
+        command: sh -c "python main.py"
+        # Replace username to your Docker Hub user
+        image: study/python:v1
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./src:/src

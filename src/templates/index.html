@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Estudo</title>
+</head>
+<body>
+    <h1>Registros de Estudo</h1>
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Matéria</th>
+            <th>Tópico</th>
+            <th>Duração</th>
+            <th>Objetivos</th>
+            <th>Notas</th>
+            <th>Recursos</th>
+            <th>Compreensão</th>
+            <th>Revisão</th>
+        </tr>
+        {% for registro in registros %}
+        <tr>
+            <td>{{ registro[1] }}</td>
+            <td>{{ registro[2] }}</td>
+            <td>{{ registro[3] }}</td>
+            <td>{{ registro[4] }}</td>
+            <td>{{ registro[5] }}</td>
+            <td>{{ registro[6] }}</td>
+            <td>{{ registro[7] }}</td>
+            <td>{{ registro[8] }}</td>
+            <td>{{ registro[9] }}</td>
+            <td>
+                <a href="/revisar-conteudo/{{ registro[0] }}">Revisar Conteudo</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/estudar">Estudar</a>
+    <a href="/revisar-materia">Revisar Materia</a>
+</body>
+</html>

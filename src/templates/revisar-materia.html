@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revisão de Conteúdo</title>
+</head>
+<body>
+    <h1>Revisão de Conteúdo</h1>
+    {% if registros %}
+        <form method="post" action="/atualizar-revisao">
+            <table>
+                <tr>
+                    <th>Data</th>
+                    <th>Matéria</th>
+                    <th>Tópico</th>
+                    <th>Duração</th>
+                    <th>Objetivos</th>
+                    <th>Notas</th>
+                    <th>Recursos</th>
+                    <th>Compreensão</th>
+                    <th>Revisado</th>
+                </tr>
+                {% for registro in registros %}
+                    <tr>
+                        <td>{{ registro[1] }}</td>
+                        <td>{{ registro[2] }}</td>
+                        <td>{{ registro[3] }}</td>
+                        <td>{{ registro[4] }}</td>
+                        <td>{{ registro[5] }}</td>
+                        <td>{{ registro[6] }}</td>
+                        <td>{{ registro[7] }}</td>
+                        <td>{{ registro[8] }}</td>
+                        <td>{{ registro[9] }}</td>
+                        <td><input type="checkbox" name="registro" value="{{ registro[0] }}"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <input type="submit" value="Atualizar Revisão">
+        </form>
+    {% else %}
+        <p>Não há registros para revisão no momento.</p>
+    {% endif %}
+    <a href="/">Voltar para a página principal</a>
+</body>
+</html>

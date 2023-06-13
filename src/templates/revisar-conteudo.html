@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revisar Conteúdo</title>
+</head>
+<body>
+    <h1>Revisar Conteúdo</h1>
+    <form method="post" action="/revisar-conteudo/{{ registro[0] }}">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" value="{{ registro[0] }}" readonly><br>
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" value="{{ registro[1] }}" readonly><br>
+        <label for="materia">Matéria:</label>
+        <input type="text" id="materia" name="materia" value="{{ registro[2] }}" readonly><br>
+        <label for="topico">Tópico:</label>
+        <input type="text" id="topico" name="topico" value="{{ registro[3] }}" readonly><br>
+        <label for="duracao">Duração (minutos):</label>
+        <input type="number" id="duracao" name="duracao" value="{{ registro[4] }}" readonly><br>
+        <label for="objetivo">Objetivos:</label>
+        <textarea id="objetivo" name="objetivo" readonly>{{ registro[5] }}</textarea><br>
+        <label for="notas">Notas:</label>
+        <textarea id="notas" name="notas" readonly>{{ registro[6] }}</textarea><br>
+        <label for="recursos">Recursos:</label>
+        <textarea id="recursos" name="recursos" readonly>{{ registro[7] }}</textarea><br>
+        <label for="compreensao">Nível de Compreensão (0 a 10):</label>
+        <input type="number" id="compreensao" name="compreensao" value="{{ registro[8] }}" required min="0" max="10"><br>
+        <label for="revisao">Revisão:</label>
+        <select id="revisao" name="revisao" required>
+            <option value="0" {% if registro[9] == 0 %}selected{% endif %}>Não</option>
+            <option value="1" {% if registro[9] == 1 %}selected{% endif %}>Sim</option>
+        </select><br>
+        <input type="submit" value="Revisar">
+    </form>
+</body>
+</html>

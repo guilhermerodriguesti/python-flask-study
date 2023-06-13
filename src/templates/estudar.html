@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Registro de Estudo</title>
+</head>
+<body>
+    <h1>Adicionar Registro de Estudo</h1>
+    <form method="post" action="/estudar">
+        <label for="data">Data:</label><input type="date" id="data" name="data" required><br>
+        
+        <label for="materia">Matéria:</label><input type="text" id="materia" name="materia" required><br>
+        
+        <label for="topico">Tópico:</label><input type="text" id="topico" name="topico" required><br>
+        
+        <label for="duracao">Duração (minutos):</label><input type="number" id="duracao" name="duracao" required><br>
+        
+        <label for="objetivo">Objetivos:</label><textarea id="objetivo" name="objetivo" required></textarea><br>
+        
+        <label for="notas">Notas:</label> <textarea id="notas" name="notas"></textarea><br>
+       
+        <label for="recursos">Recursos:</label><textarea id="recursos" name="recursos"></textarea><br>
+        
+        <label for="compreensao">Nível de Compreensão (0 a 10):</label><input type="number" id="compreensao" name="compreensao" required min="0" max="10"><br>
+        
+        <label for="revisao">Revisão:</label>
+        <select id="revisao" name="revisao" required>
+            <option value="Nao">Não</option>
+            <option value="Sim">Sim</option>
+        </select><br>
+        <input type="submit" value="Adicionar">
+    </form>
+</body>
+</html>
